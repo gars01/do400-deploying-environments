@@ -24,17 +24,17 @@ pipeline {
             steps {
                 sh '''
                     ./mvnw quarkus:add-extension \
-                    -Dextensions="kubernetes,container-image-jib" 2
+                    -Dextensions="kubernetes,container-image-jib" 
                 '''
                 sh '''
                     ./mvnw package -DskipTests \
-                    -Dquarkus.container-image.build=true \ 3
-                    -Dquarkus.container-image.registry=quay.io \ 4
-                    -Dquarkus.container-image.group=$QUAY_USR \ 5
-                    -Dquarkus.container-image.name=do400-deploying-environments \ 6
-                    -Dquarkus.container-image.username=$QUAY_USR \ 7
-                    -Dquarkus.container-image.password="$QUAY_PSW" \ 8
-                    -Dquarkus.container-image.push=true 9
+                    -Dquarkus.container-image.build=true \ 
+                    -Dquarkus.container-image.registry=quay.io \ 
+                    -Dquarkus.container-image.group=$QUAY_USR \ 
+                    -Dquarkus.container-image.name=do400-deploying-environments \ 
+                    -Dquarkus.container-image.username=$QUAY_USR \ 
+                    -Dquarkus.container-image.password="$QUAY_PSW" \ 
+                    -Dquarkus.container-image.push=true 
                 '''
             }
         }  
